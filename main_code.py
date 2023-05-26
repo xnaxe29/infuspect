@@ -16,6 +16,9 @@ import re
 import basic_functions as bf
 import secondary_spectral_window as ssw
 
+tmp_filename = "/Users/adarshranjan/Desktop/main_projects/asiaa_projects/In-FU-spect/KMOS_TC/calibrated/P1-combined_OB/reflex_end_products/2023-04-15T20:39:47/KMOS.2021-01-24T04:20:32.711_combine_OBs/P1-OB3_COMBINED_CUBE_CSMS15-698840.fits"
+
+tmp_redshift = 1.5
 
 
 ##################################LASSO_FUNCTIONS##################################
@@ -84,9 +87,8 @@ def retrieve_grouped_data(data_array, err_array, grouping_string):
 
 
 kmos_ob = bf.kmos_cube_analysis()
-kmos_ob.redshift = 1.5906735751295336
+kmos_ob.redshift = tmp_redshift
 
-tmp_filename = "/Users/adarshranjan/Desktop/main_projects/asiaa_projects/In-FU-spect/KMOS_TC/calibrated/P1-combined_OB/reflex_end_products/2023-04-15T20:39:47/KMOS.2021-01-24T04:20:32.711_combine_OBs/P1-OB3_COMBINED_CUBE_CSMS15-698840.fits"
 kmos_ob.get_data_from_file(tmp_filename)
 kmos_ob.prepare_2d_image()
 cmap_type_preferred = 'viridis'
